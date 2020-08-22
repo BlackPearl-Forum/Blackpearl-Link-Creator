@@ -30,12 +30,31 @@ If you enabled the check box, you can now easily copy & paste the result into yo
 <img src="https://i.ibb.co/3cpmfvh/hidereact-disabled.png" alt="hideract_disabled" border="0"><br><br>
 
 # Usage CLI
-Version without hidereact:
 ```
-python cli_clean.py remote:path
-```
+usage: links.py [-h] [--remote REMOTE] [--hidereact] [--downcloud]
 
-Version with hidereact:
+Get them infos
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --remote REMOTE, -r REMOTE
+                        Set the Rclone Remote Path Ex: Gdrive:folder/path
+  --hidereact, -hr      Use Hidereact BBCode with link output
+  --downcloud, -dc      Use Downcloud BBCode with link output
 ```
-python cli_hidereact.py remote:path
+Example with Hidereact and Downcloud:
+```
+links.py -r Gdrive:folder/path -hr -dc
+File1
+[Hidereact=1,2,3,4,5,6,7,8][Downcloud]link1[/downcloud][/hidereact]
+File2
+[Hidereact=1,2,3,4,5,6,7,8][Downcloud]link2[/downcloud][/hidereact]
+```
+Example with only Hidereact:
+```
+links.py -r Gdrive:folder/path -hr
+File1
+[Hidereact=1,2,3,4,5,6,7,8]link1[/hidereact]
+File2
+[Hidereact=1,2,3,4,5,6,7,8]link2[/hidereact]
 ```
