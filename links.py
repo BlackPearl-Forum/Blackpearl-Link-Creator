@@ -39,24 +39,22 @@ parser.add_argument('--downcloud', '-dc', default=False, action='store_true',
 
 args = parser.parse_args()
 
-path = args.remote
+# Check Remote string
+path = input(
+    "Input your Rclone Remote: ") if args.remote is None else args.remote
 
-# Runs RcloneList w/ System Argument to grab all file names
+# Runs RcloneList w/ path to grab all file names
 files = RcloneList(path)
 
-# Add System Argument to beginning of every file name grabbed from RcloneList(path)
+# Add arg.remote to beginning of every file name grabbed from RcloneList(path)
 filesPath = [os.path.join(path, fl) for fl in files]
 
 # Counter to list each iteration of variable "files" which is the file names
 count = 0
-if args.hidereact is True:
-    hidebbcode = ["[Hidereact=1,2,3,4,5,6,7,8]", "[/hidereact]"]
-else:
-    hidebbcode = ["", ""]
-if args.downcloud is True:
-    downcloudBBcode = ["[Downcloud]", "[/downcloud]"]
-else:
-    downcloudBBcode = ["", ""]
+hidebbcode = ["[Hidereact=1,2,3,4,5,6,7,8]",
+              "[/hidereact]"] if args.hidereact is True else ["", ""]
+downcloudBBcode = ["[Downcloud]",
+                   "[/downcloud]"] if args.downcloud is True else ["", ""]
 # makes ThreadPoolExecutor() run when we say executor
 with ThreadPoolExecutor() as executor:
     # link in ThreadPoolExecutor().map() This creates a queue to push the
