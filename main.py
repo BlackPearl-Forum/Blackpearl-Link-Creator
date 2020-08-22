@@ -2,7 +2,7 @@
 ###      Author: Shix       ###
 ###      Modder: Cocee      ###
 ###      Modder: Bilibox    ###
-###      Version: 1.0.0     ###
+###      Version: 1.0.1     ###
 ###############################
 
 from tkinter import *
@@ -19,7 +19,7 @@ class Window(Frame):
     def __init__(self, master=None):
         Frame.__init__(self, master)
         self.master = master
-        master.title("Create Multiple File links - v1.0.0")
+        master.title("Create Multiple File links - v1.0.1")
         self.init_window()
 
     # Creation of init_window
