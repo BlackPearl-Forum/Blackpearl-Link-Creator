@@ -74,7 +74,7 @@ class Window(Frame):
                     if hide_checkValue.get() == 1:
                         if count < 2:
                             rclone_text.insert(
-                                INSERT, '[hidereact=1,2,3,4,5,6]\n')
+                                INSERT, '[hidereact=1,2,3,4,5,6,7,8]\n')
 
                         rclone_text.insert(INSERT, c)
 
