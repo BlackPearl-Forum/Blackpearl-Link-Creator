@@ -21,6 +21,7 @@ def RcloneList(path):
     filelist = subprocess.run([
         "rclone",
         "lsf",
+        "-R",
         path],
         encoding='utf-8',
         stdout=subprocess.PIPE)
