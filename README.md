@@ -1,6 +1,6 @@
 # Blackpearl Link Creator
 Easy script to generate multiple links with <a href="https://github.com/rclone/rclone" tarbet="blank">rclone</a>.<br>
-With this script you can generate download links for each file inside a folder, if you don't have the permissions to share a folder.<br>
+With this script you can generate download links for each file inside a folder and for every file in sub folders, if you don't have the permissions to share a folder.<br>
 You could also create multiple download links of folders with this script.
 
 # How to Setup
