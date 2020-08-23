@@ -1,3 +1,9 @@
+###############################
+###      Author: Bilibox    ###
+###      Modder: Cocee      ###
+###      Version: 1.0.1     ###
+###############################
+
 import sys
 import os
 import subprocess
@@ -21,7 +27,6 @@ def RcloneList(path):
     filelist = subprocess.run([
         "rclone",
         "lsf",
-        "-R",
         path],
         encoding='utf-8',
         stdout=subprocess.PIPE)
