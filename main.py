@@ -2,7 +2,7 @@
 ###      Author: Shix       ###
 ###      Modder: Cocee      ###
 ###      Modder: Bilibox    ###
-###      Version: 1.0.1     ###
+###      Version: 1.0.2     ###
 ###############################
 
 from tkinter import *
@@ -53,7 +53,6 @@ class Window(Frame):
                 filelist = subprocess.run([
                     "rclone",
                     "lsf",
-                    "-R",
                     path],
                     encoding='utf-8',
                     stdout=subprocess.PIPE)
