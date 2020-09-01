@@ -3,7 +3,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## [1.0.2] - 2020-80-23
+## [1.0.3] - 2020-09-01
+
+## Added
+- Gui integration into 1 script, now ran with --gui argument
+- Updater, used with --update argument
+- Future Arg (--nolinks), Not Implemented
+- Proper segmentation + PEP8 Standardization
+- Auto-install missing modules
+- Checks for unknown/missing remote.
+
+## Fixed
+- Unordered Filenames properly (Added back Recursive).
+- Consistency issues between the Gui & Cli version
+- Changelog: v1.0.2 date
+- Proper versioning for future updater
+- Rclone error's no longer output.
+- Readme errors.
+
+## [1.0.2] - 2020-08-23
 
 ## Added
 - CHANGELOG.md
@@ -27,7 +45,7 @@ Merged cli_clean.py and cli_hidereact.py to links.py<br>
 
 - Update README.md [51861ef](https://github.com/BlackPearl-Forum/Blackpearl-Link-Creator/commit/51861ef07403016cc7d46f7bca72a045eceaef7f)
 
-- Bumb Version [2fce03a](https://github.com/BlackPearl-Forum/Blackpearl-Link-Creator/commit/2fce03a97961eabd762b600ca266b613f7761ada)
+- Bump Version [2fce03a](https://github.com/BlackPearl-Forum/Blackpearl-Link-Creator/commit/2fce03a97961eabd762b600ca266b613f7761ada)
 
 ## [1.0.0] - 2020-08-21
 
