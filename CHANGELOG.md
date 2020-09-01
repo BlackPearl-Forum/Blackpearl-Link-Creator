@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## Added
 - Gui integration into 1 script, now ran with --gui argument
-- Updater, used with --update argument
+- Updater, used with --update argument, Checks for Updates upon startup
 - Future Arg (--nolinks), Not Implemented
 - Proper segmentation + PEP8 Standardization
 - Auto-install missing modules

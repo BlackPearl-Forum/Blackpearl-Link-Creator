@@ -8,9 +8,11 @@ try:
     import argparse
     import pkg_resources
     from concurrent.futures import ThreadPoolExecutor
+    from packaging import version
     import requests
+    import lxml.html as ltml
 except Exception as e:
-    required = {'requests'}
+    required = {'requests', 'lxml'}
     installed = {pkg.key for pkg in pkg_resources.working_set}
     missing = required - installed
     if missing:
@@ -64,6 +66,17 @@ class LinkChecker():
                 sys.exit("Script NOT updated. Please manually update.")
         except Exception as e:
             sys.exit("Updater Failed: " + e)
+
+    def UpdateCheck(self):
+        uCheckURL = ("https://github.com/BlackPearl-Forum/" +
+                     "Blackpearl-Link-Creator/releases/latest")
+        req = requests.get(uCheckURL)
+        tree = ltml.fromstring(req.content)
+        latestVer = tree.find('.//span[@class="css-truncate-target"]').text
+        if version.parse(latestVer) > version.parse(__version__):
+            return True
+        else:
+            return False
 
     def ParseArgs(self):
         parser = argparse.ArgumentParser(description='Get them infos')
@@ -128,6 +141,9 @@ class LinkChecker():
         if self.args.gui or ".pyw" in self._scriptFileName:
             Gui().startGUI()
         else:
+            updateBool = self.UpdateCheck()
+            if updateBool:
+                print("Update Avaliable!")
             self.OutputList()
 
 
@@ -193,6 +209,9 @@ class Gui():
         self.masterWindow.call('wm', 'iconphoto', self.masterWindow._w, image)
 
         self.masterWindow.geometry("500x500")
+        updateBool = LinkChecker().UpdateCheck()
+        if updateBool:
+            self.OutputBox.insert(tk.INSERT, 'Update Avaliable!')
         self.masterWindow.mainloop()
 
     def Clear(self):
