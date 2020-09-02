@@ -17,7 +17,7 @@ If you didn't add Rclone to your SystemVariables you need to place the Script in
 '--remote' or '-r'<br>
 Set The Rclone Remote Path Ex: Gdrive:folder/path <br>
 
-'--hidereact' or '-hr'<br> 
+'--hidereact' or '-hr'<br>
 Use Hidereact BBCode With Link Output <br>
 
 '--downcloud' or '-dc'<br>
@@ -33,20 +33,20 @@ Launch Script As A Gui <br>
 Update Script To The Newest Version <br>
 
 # Usage GUI
-1. Run Script with --gui argument. `links.py --gui` OR rename links.py to links.pyw Open it.<br><img src="https://i.ibb.co/cFrZ9nh/clean.png" alt="clean" border="0">
+1. Run Script with --gui argument. `links.py --gui` OR rename links.py to links.pyw Open it.<br><img src="https://i.imgur.com/DEA1lCq.png" alt="clean" border="0">
 2. Enter (1) the Rclone path of the files you want to share.
-3. Check the Box (2) if you wanna add the hidereact and downcloud tag for your link.
-4. Don't check the Box (2) if you don't want to add the hidereact and downcloud tag for your link.
+3. Check the Box (2) if you wanna add the hidereact tag for your link.
+4. Check the Box (3) if you wanna add the downcloud tag for your link.
 5. Click on Submit, wait a little bit and let the magic happen.
 
 # Result
-- Hidereact enabled (Don't mention the empty downcloud tag. Its because of a folder thats not shareable)
-<img src="https://i.ibb.co/C2nHJKh/hidereact-enabled.png" alt="hidereact_enabled" border="0"><br><br>
-If you enabled the check box, you can now easily copy & paste the result into your post!
+(Don't mention the empty downcloud tag. Its because of a folder thats not shareable)
+<img src="https://i.imgur.com/EJRHQdI.png" alt="hidereact_enabled" border="0">
 
-- Hidereact disabled<br>
-<img src="https://i.ibb.co/3cpmfvh/hidereact-disabled.png" alt="hidereact_disabled" border="0"><br><br>
+If you enabled one of the checkboxes, you can easily copy & paste the result into your post!
 
+If you don't enable one of the checkboxes, you get a clean result with only the file names and download links.
+<img src="https://i.imgur.com/NyCAp6o.png" alt="hidereact_enabled" border="0">
 # Usage CLI
 ```
 usage: links.py [-h] [--remote REMOTE] [--hidereact] [--downcloud] [--nolinks] [--gui] [--update]
