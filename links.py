@@ -9,10 +9,13 @@ from concurrent.futures import ThreadPoolExecutor
 from packaging import version
 from importlib import import_module
 
-libReq = {'requests', 'lxml'}
+libReq = {'requests', 'lxml', 'packaging'}
 for x in libReq:
     try:
-        lib = import_module(x)
+        if x == "lxml":
+            lib = import_module("lxml.html")
+        else:
+            lib = import_module(x)
     except:
         subprocess.run([
             "pip",
@@ -28,7 +31,10 @@ for x in libReq:
             lib = import_module(x)
             globals()[x] = lib
     else:
-        globals()[x] = lib
+        if x == "lxml":
+            globals()["ltml"] = lib
+        else:
+            globals()[x] = lib
 
 
 __version__ = '1.0.4'
