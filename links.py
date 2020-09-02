@@ -1,28 +1,37 @@
-try:
-    import tkinter as tk
-    from tkinter import scrolledtext
-    import os
-    import base64
-    import sys
-    import subprocess
-    import argparse
-    import pkg_resources
-    from concurrent.futures import ThreadPoolExecutor
-    from packaging import version
-    import requests
-    import lxml.html as ltml
-except Exception as e:
-    required = {'requests', 'lxml'}
-    installed = {pkg.key for pkg in pkg_resources.working_set}
-    missing = required - installed
-    if missing:
-        python = sys.executable
-        subprocess.check_call(
-            [python, '-m', 'pip', 'install', *missing],
+import tkinter as tk
+from tkinter import scrolledtext
+import os
+import base64
+import sys
+import subprocess
+import argparse
+from concurrent.futures import ThreadPoolExecutor
+from packaging import version
+from importlib import import_module
+
+libReq = {'requests', 'lxml'}
+for x in libReq:
+    try:
+        lib = import_module(x)
+    except:
+        subprocess.run([
+            "pip",
+            "install",
+            x],
+            encoding='utf-8',
+            stderr=subprocess.DEVNULL,
             stdout=subprocess.DEVNULL)
+        if x == "lxml":
+            lib = import_module("lxml.html")
+            globals()["ltml"] = lib
+        else:
+            lib = import_module(x)
+            globals()[x] = lib
+    else:
+        globals()[x] = lib
 
 
-__version__ = '1.0.3'
+__version__ = '1.0.4'
 
 
 class LinkChecker():
