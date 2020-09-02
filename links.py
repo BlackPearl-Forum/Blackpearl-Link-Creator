@@ -6,7 +6,6 @@ import sys
 import subprocess
 import argparse
 from concurrent.futures import ThreadPoolExecutor
-from packaging import version
 from importlib import import_module
 
 libReq = {'requests', 'lxml', 'packaging'}
@@ -14,6 +13,8 @@ for x in libReq:
     try:
         if x == "lxml":
             lib = import_module("lxml.html")
+        elif x == "packaging":
+            lib=import_module("..version", "packaging.subpkg")
         else:
             lib = import_module(x)
     except:
@@ -27,12 +28,17 @@ for x in libReq:
         if x == "lxml":
             lib = import_module("lxml.html")
             globals()["ltml"] = lib
+        elif x == "packaging":
+            lib=import_module("..version", "packaging.subpkg")
+            globals()["version"] = lib
         else:
             lib = import_module(x)
             globals()[x] = lib
     else:
         if x == "lxml":
             globals()["ltml"] = lib
+        elif x == "packaging":
+            globals()["version"] = lib
         else:
             globals()[x] = lib
 
