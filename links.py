@@ -5,6 +5,7 @@ import base64
 import sys
 import subprocess
 import argparse
+import threading
 from concurrent.futures import ThreadPoolExecutor
 from importlib import import_module
 
@@ -43,7 +44,7 @@ for x in libReq:
             globals()[x] = lib
 
 
-__version__ = '1.0.4'
+__version__ = '1.0.5'
 
 
 class LinkChecker():
@@ -213,7 +214,7 @@ class Gui():
         buttonsFrame.grid(row=3, column=0, sticky=tk.W+tk.E+tk.S)
 
         runButton = tk.Button(
-            buttonsFrame, text='Submit', bg="#4CAF50", command=self.Submit)
+            buttonsFrame, text='Submit', bg="#4CAF50", command=self.start_submit_thread)
         runButton.grid(row=0, column=0, sticky=tk.E+tk.W)
 
         clrButton = tk.Button(
@@ -278,7 +279,11 @@ class Gui():
                     fileLink.replace('\n', '') + downcloudBBcode[1] + '\n\n')
                 if len(filesPath) == count:
                     self.OutputBox.insert(tk.INSERT, hidebbcode[1])
-
+        self.OutputBox.insert(tk.INSERT, "-- FINISHED --\n\n")
+                    
+    def start_submit_thread(self):
+        submit_thread = threading.Thread(target=self.Submit)
+        submit_thread.start()
 
 if __name__ == "__main__":
     LinkChecker().Main()

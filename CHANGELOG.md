@@ -2,11 +2,14 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## [1.0.5] - 2020-09-05
+## Fixed
+- GUI freezing
+
 ## [1.0.4] - 2020-09-02
 
 ## Fixed
 - Auto-Installer for required modules
-
 
 ## [1.0.3] - 2020-09-01
 
@@ -29,7 +32,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## [1.0.2] - 2020-08-23
 
 ## Added
-- CHANGELOG.md
 - Version in links.py
 
 ## Fixed
@@ -37,20 +39,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [1.0.1] - 2020-08-22
 
+## Changed
+- Merged cli_clean.py and cli_hidereact.py to links.py
+- Clean up 
+
 ### Added
-- Merging [28c4b48](https://github.com/BlackPearl-Forum/Blackpearl-Link-Creator/commit/28c4b4806ae61b3b1ae687b8f88eda6734bac220)<br>
-Merged cli_clean.py and cli_hidereact.py to links.py<br>
-
-- Update README.md
-
-- Added Hidereact 7,8 [1ced602](https://github.com/BlackPearl-Forum/Blackpearl-Link-Creator/commit/1ced602e2312bb19a9be3d96e9d73bc12f68cc90)
-- Clean up [16cf807](https://github.com/BlackPearl-Forum/Blackpearl-Link-Creator/commit/16cf80774705b333a23d34a1fb498aea7106e2f8)
-
-- Adding recursive [ecba35a](https://github.com/BlackPearl-Forum/Blackpearl-Link-Creator/commit/ecba35a843bc1dea99f432c5e1a7a0bc7b66174c)
-
-- Update README.md [51861ef](https://github.com/BlackPearl-Forum/Blackpearl-Link-Creator/commit/51861ef07403016cc7d46f7bca72a045eceaef7f)
-
-- Bump Version [2fce03a](https://github.com/BlackPearl-Forum/Blackpearl-Link-Creator/commit/2fce03a97961eabd762b600ca266b613f7761ada)
+- Added Hidereact 7,8 
+- Adding recursive
 
 ## [1.0.0] - 2020-08-21
 
